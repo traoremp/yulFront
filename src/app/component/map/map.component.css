@@ -1,0 +1,27 @@
+
+
+
+.parent {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  vertical-align:bottom;
+  height: 75px
+}
+.image2 {
+  position: absolute;
+  z-index: 100;
+  left:0;
+  margin: 23%;
+  height: 50px;
+}
+
+.spanLine{
+  position: relative;
+}

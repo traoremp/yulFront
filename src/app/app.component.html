@@ -1,0 +1,19 @@
+<style>
+</style>
+
+
+<div class="content" role="main">
+
+  <h1>Accueil du YUL.code</h1>
+  <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+  <nav class="nav navbar-expand ">
+    <ul class="nav nav-list">
+      <li><a class="nav-link" [routerLink]="['/map', 1]">Map 1</a></li>
+      <li><a class="nav-link" [routerLink]="['/map', 2]">Map 2</a></li>
+      <li><a class="nav-link" [routerLink]="['/map', 3]">Map 3</a></li>
+
+    </ul>
+  </nav>
+
+</div>
+<router-outlet></router-outlet>
