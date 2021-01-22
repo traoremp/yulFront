@@ -7,14 +7,14 @@ import {MapComponent} from './component/map/map.component';
 
 import {RxStompService} from '@stomp/ng2-stompjs';
 import {ProgressWebsocketService} from './service/progress.websocket.service';
-import {AvatarComponent} from './component/avatar/avatar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { MainComponent } from './component/main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    AvatarComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,
