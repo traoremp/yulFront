@@ -63,7 +63,7 @@ export class WebsocketService {
     // @ts-ignore
     this.stompService.stompClient.configure(this.stompConfig);
     this.stompService.stompClient.onConnect = this.onSocketConnect;
-    this.stompService.stompClient.onStompError = this.onSocketError;
+    // this.stompService.stompClient.onStompError = this.onSocketError;
     this.stompService.stompClient.activate();
   }
 
