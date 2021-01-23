@@ -54,7 +54,7 @@ export class MapComponent implements OnInit, OnDestroy {
         console.log(err);
       }
     });
-  }
+  };
 
   /**
    * Apply result of the java server notification to the view.
@@ -67,7 +67,7 @@ export class MapComponent implements OnInit, OnDestroy {
         this.displayTime(receivedMsg.message);
       }
     }
-  }
+  };
 
   display(x: number, y: number, avatar: any): boolean {
     if (avatar.x === x && avatar.y === y) {
@@ -75,6 +75,18 @@ export class MapComponent implements OnInit, OnDestroy {
     }
     return false;
   }
+
+  display2(x: number, y: number, avatars: Avatar[]): string | undefined {
+    if (avatars !== undefined) {
+      const found = avatars.find(element => element.y === y && element.x === x);
+
+      if (found !== undefined) {
+        return found.image;
+      }
+    }
+    return '../assets/images/vide.png';
+  }
+
 
   displayTime(second: number): void {
     const hours = Math.floor(second / 60 / 60);
@@ -87,7 +99,6 @@ export class MapComponent implements OnInit, OnDestroy {
     this.avatarList = (listAvatar as Avatar[]);
     console.log(this.avatarList);
   }
-
 
 
 }
