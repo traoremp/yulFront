@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
+import { WebsocketService } from 'src/app/service/websocket.service';
 
 @Component({
   selector: 'app-main',
@@ -41,7 +42,10 @@ export class MainComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor() {
+
+    // this.dataAvatar 
+   }
 
 
 }

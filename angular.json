@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "yulFront"
+  "defaultProject": "yulFront",
+  "cli": {
+    "analytics": "24ae59ba-946b-4336-b400-749ec4b75c23"
+  }
 }

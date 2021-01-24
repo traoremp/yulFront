@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MapComponent} from './component/map/map.component';
+// import { AvatarComponent } from './component/avatar/avatar.component';
 
 import {RxStompService} from '@stomp/ng2-stompjs';
 import {ProgressWebsocketService} from './service/progress.websocket.service';
@@ -14,7 +15,8 @@ import { MainComponent } from './component/main/main.component';
   declarations: [
     AppComponent,
     MapComponent,
-    MainComponent
+    MainComponent,
+    // AvatarComponent
   ],
   imports: [
     BrowserModule,

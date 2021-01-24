@@ -1,9 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProgressWebsocketService} from '../../service/progress.websocket.service';
-import {Avatar} from 'src/model/avatar';
+import {AvatarModel} from 'src/model/avatar';
 import {ActivatedRoute} from '@angular/router';
 import {MapService} from '../../service/map.service';
 import {MapModel} from '../../../model/map';
+import { AvatarService } from 'src/app/service/avatar.service';
+// import { AvatarComponent } from '../avatar/avatar.component';
+// import { AvatarService } from 'src/app/service/avatar.service';
 
 
 @Component({
@@ -16,10 +19,10 @@ export class MapComponent implements OnInit, OnDestroy {
   public title = 'Using WebSocket under Angular';
   private obs: any;
   public timer: string | undefined;
-  public avatarList: Avatar[] | undefined;
+  public avatarList: AvatarModel[] | undefined;
   mapResponse: MapModel | undefined;
 
-  constructor(private router: ActivatedRoute, private progressWebsocketService: ProgressWebsocketService, private mapService: MapService) {
+  constructor(private router: ActivatedRoute, private progressWebsocketService: ProgressWebsocketService, private mapService: MapService, private avatarService: AvatarService) {
     router.params.subscribe(val => {
       this.initProgressWebSocket();
       this.mapService.getMapById(val.id).subscribe(map => {
@@ -31,6 +34,11 @@ export class MapComponent implements OnInit, OnDestroy {
           console.log(error.message);
         }
       );
+      this.avatarService.getAllAvatar().subscribe(avatars => {
+        this.avatarList = avatars;
+        console.log("Got all avatars");
+        console.log(this.avatarList);
+      })
     });
   }
 
@@ -76,7 +84,7 @@ export class MapComponent implements OnInit, OnDestroy {
     return false;
   }
 
-  display2(x: number, y: number, avatars: Avatar[]): string | undefined {
+  display2(x: number, y: number, avatars: AvatarModel[]): string | undefined {
     if (avatars !== undefined) {
       const found = avatars.find(element => element.y === y && element.x === x);
 
@@ -96,7 +104,7 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   displayAvatar(listAvatar: any): void {
-    this.avatarList = (listAvatar as Avatar[]);
+    this.avatarList = (listAvatar as AvatarModel[]);
     console.log(this.avatarList);
   }
 

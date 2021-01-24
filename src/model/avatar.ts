@@ -1,4 +1,4 @@
-export class Avatar {
+export class AvatarModel {
   x: number | undefined;
   y: number | undefined;
   image: string | undefined;
